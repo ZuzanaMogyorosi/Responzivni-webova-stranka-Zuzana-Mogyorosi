@@ -1,0 +1,486 @@
+:root {
+	--background-header: #33292a;
+	--background-contact-us: #644b4f;
+	--bacground-footer: #333333;
+	--text-white: white;
+	--footer-contact: #efa69d;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+/* NAV + HEADER SECTION */
+nav {
+	background-color: var(--background-header);
+}
+.navigation-wrapper {
+	/* background-color: var(--background-header); */
+	width: 70%;
+	margin: 0 auto;
+}
+.navigation-list {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	/* width: 70%;
+	margin: 0 auto; */
+}
+.navigation-wrapper a {
+	text-decoration: none;
+	color: var(--text-white);
+}
+.navigation-item {
+	padding: 20px 0px;
+	/* padding-bottom: 25px; */
+}
+.nav-icon {
+	display: flex;
+	color: #fff;
+	justify-content: end;
+}
+
+.fa {
+	font-size: 30px;
+	padding-top: 5px;
+}
+@media (max-width: 768px) {
+	.navigation-wrapper {
+		height: 40px;
+		width: 90%;
+		margin: 0 auto;
+	}
+	.nav-icon {
+		background-color: var(--background-header);
+		position: right;
+	}
+}
+@media (min-width: 768px) {
+	.nav-icon {
+		display: none;
+	}
+}
+.hero-image {
+	height: 60vh;
+	background-image: url(./images/scott-goodwill-y8Ngwq34_Ak-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-position: 50% 70%;
+	background-size: cover;
+}
+
+.hero-section-wrapper {
+	height: 100%;
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.hero-text {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: var(--text-white);
+	text-align: right;
+}
+@media (max-width: 768px) {
+	.hero-section-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+	.navigation-list {
+		display: none;
+	}
+}
+
+/* MAIN */
+/* section about us */
+
+.section-about-us {
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	gap: 20px;
+	padding: 100px 0px;
+}
+.about-us-text {
+	flex-basis: 50%;
+}
+
+.about-us-picture {
+	background-image: url(./images/anneliese-phillips-uv4-vl3liKM-unsplash.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	max-width: 100%;
+	flex-basis: 50%;
+	background-position: 50% 70%;
+}
+@media (max-width: 768px) {
+	.section-about-us {
+		display: flex;
+		flex-wrap: wrap;
+		width: 90%;
+		margin: 0 auto;
+		padding: 50px 0px;
+	}
+	.about-us-text {
+		flex-basis: 100%;
+	}
+	.about-us-picture {
+		max-width: 100%;
+		height: 300px;
+		flex-basis: 100%;
+	}
+	.section-about-us h2 {
+		margin: 0px;
+	}
+}
+
+/* section what we do */
+
+.section-what-we-do {
+	background-color: var(--background-header);
+	color: var(--text-white);
+}
+
+.what-we-do-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	padding: 45px 0px;
+	display: flex;
+	flex-direction: column;
+	gap: 60px;
+}
+
+.what-we-do-text {
+	text-align: center;
+}
+.icon-container {
+	display: flex;
+	justify-content: space-between;
+}
+.icon-1 {
+	background-image: url(./icons/png-icons-white/hiking-white.png);
+}
+.icon-2 {
+	background-image: url(./icons/png-icons-white/cycle-white.png);
+}
+.icon-3 {
+	background-image: url(./icons/png-icons-white/water-white.png);
+}
+.icon-4 {
+	background-image: url(./icons/png-icons-white/car-white.png);
+}
+.galery {
+	height: 100px;
+	width: 100px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.icon-text {
+	text-align: center;
+	padding-top: 20px;
+}
+@media (max-width: 768px) {
+	.icon-container {
+		display: flex;
+		flex-direction: column;
+	}
+	.icon-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.icon-text {
+		padding-bottom: 25px;
+		padding-top: 10px;
+	}
+	.what-we-do-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+/* section our trips */
+.section-our-trips {
+	width: 70%;
+	margin: 0 auto;
+	padding: 110px 0px;
+}
+.our-trips-wrapper {
+	display: flex;
+
+	gap: 10px;
+	flex-wrap: wrap;
+}
+.section-our-trips h2 {
+	margin: 0;
+}
+.photo {
+	width: 250px;
+	height: 250px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 5px;
+	/*teď dojde k tomu, že v jednom řádku ty ten gap odečteš celkem 3x (protože každý obrázek od své šířky odečte 10px, obrázky jsou 3) -> tzn. celkem odečteno 30px na řádek, kde bylo potřeba odečíst jen 20px.*/
+	/* width: calc(100% / 3 - 10px); toto bych si tady ráda nechala pro případné vrácení se k tomu (vím že to tu nemá být)*/
+	width: calc(100% / 3 - 20px / 3);
+}
+.trips-1 {
+	background-image: url(./images/simon-english-48nerZQCHgo-unsplash.jpg);
+}
+.trips-2 {
+	background-image: url(./images/james-wheeler-ZOA-cqKuJAA-unsplash.jpg);
+}
+.trips-3 {
+	background-image: url(./images/daniel-tseng-73lmMKhi2U8-unsplash.jpg);
+}
+.trips-4 {
+	background-image: url(./images/holly-mandarich-UVyOfX3v0Ls-unsplash.jpg);
+}
+.trips-text-5 {
+	background-image: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.trips-6 {
+	background-image: url(./images/patrick-szylar-45bM3XGqnDE-unsplash.jpg);
+}
+.trips-7 {
+	background-image: url(./images/chung-yee-tsang-wqxCKM0R6R8-unsplash.jpg);
+}
+.trips-8 {
+	background-image: url(./images/julian-bialowas-ilkTnuMunP8-unsplash.jpg);
+}
+.trips-9 {
+	background-image: url(./images/matej-drha-rbDzMcJsBkY-unsplash.jpg);
+}
+@media (max-width: 756px) {
+	.photo {
+		flex-wrap: wrap;
+		width: 100%;
+		border-radius: 0px;
+	}
+	.trips-text-5 {
+		height: 150px;
+	}
+	.section-our-trips {
+		width: 80%;
+		margin: 0 auto;
+		padding: 60px 0px;
+	}
+	.section-our-trips {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+/* SECTION CONTACT US */
+
+.section-contact-us {
+	background-color: var(--background-contact-us);
+}
+.contact-us-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	gap: 20px;
+	padding: 80px 0px;
+}
+.contact-us-title {
+	flex-basis: 100%;
+	color: var(--text-white);
+	text-align: center;
+}
+.contact-us-text-wrapper {
+	flex-basis: 100%;
+}
+.contact-us-text {
+	color: var(--text-white);
+}
+button {
+	padding: 10px;
+	margin-top: 30px;
+	border-radius: 5px;
+}
+@media (max-width: 768px) {
+	.contact-us-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 80px 0px;
+		width: 90%;
+		margin: 0 auto;
+	}
+	.contact-us-text-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: left;
+	}
+	.section-contact-us h2 {
+		margin: 0px;
+		text-align: left;
+	}
+}
+/* section reviews */
+
+.section-reviews {
+}
+.reviews-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	padding: 120px 0px;
+}
+.reviews-text {
+	width: 350px;
+	margin: 0 auto;
+	text-align: center;
+}
+.product-card-section {
+	display: flex;
+	justify-content: space-around;
+}
+.product-card {
+	width: 350px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.photo-1 {
+	background-image: url(./images/kalen-emsley-kGSapVfg8Kw-unsplash.jpg);
+}
+.photo-2 {
+	background-image: url(./images/jeffrey-keenan-pUhxoSapPFA-unsplash.jpg);
+}
+.product-card-photo {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.product-card-text {
+	text-align: center;
+}
+.name {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+@media (max-width: 768px) {
+	.reviews-wrapper {
+		width: 90%;
+		margin: 0 auto;
+		padding: 70px 0px;
+	}
+	.reviews-text {
+		max-width: 100%;
+	}
+	.reviews-text h2 {
+		margin: 0;
+	}
+	.product-card-section {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 40px;
+	}
+}
+
+/* SECTION FOUR PICTURE */
+
+.four-picture {
+	height: 800px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.picture-1 {
+	height: 400px;
+	flex-basis: 50%;
+	background-image: url(./images/alexey-fedenkov-BaCZYH9RLmQ-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.picture-2 {
+	height: 400px;
+	flex-basis: 50%;
+	background-image: url(./images/omer-salom-LoijtQXXNhs-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.picture-3 {
+	height: 400px;
+	flex-basis: 50%;
+	background-image: url(./images/vincentiu-solomon-7MH4ped6_Mo-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.picture-4 {
+	height: 400px;
+	flex-basis: 50%;
+	background-image: url(./images/daniel-tseng-73lmMKhi2U8-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+@media (max-width: 768px) {
+	.four-picture {
+		flex-wrap: wrap;
+	}
+	.picture-1 {
+		height: 200px;
+		flex-basis: 100%;
+		background-position: 50% 40%;
+	}
+	.picture-2 {
+		height: 200px;
+		flex-basis: 100%;
+		background-position: 50% 60%;
+	}
+	.picture-3 {
+		height: 200px;
+		flex-basis: 100%;
+		background-position: 50% 70%;
+	}
+	.picture-4 {
+		height: 200px;
+		flex-basis: 100%;
+		background-position: 50% 55%;
+	}
+}
+
+/* FOOTER SECTION */
+
+footer {
+	background-color: var(--bacground-footer);
+	text-align: center;
+	padding: 40px 0px;
+}
+.contact-section {
+	color: var(--footer-contact);
+	font-size: 13px;
+	text-decoration: underline;
+	padding-bottom: 20px;
+}
+.footer-text {
+	color: var(--text-white);
+	font-size: 10px;
+}
+@media (max-width: 768px) {
+	footer {
+		padding: 30px 0px;
+	}
+}
